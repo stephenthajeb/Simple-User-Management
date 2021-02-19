@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://stephen:stephen123@cluster0.fjq8w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "secretToken": "mySecretToken",
+  "refreshToken": "myRefreshToken"
+}
