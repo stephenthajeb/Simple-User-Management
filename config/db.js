@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const config = require('config')
-const db = config.get('mongoURI')
+const db = config.get('MONGOURI')
 
 const connectDB = async () => {
   try {
@@ -12,7 +12,7 @@ const connectDB = async () => {
     })
     console.log('Connected to DB')
   } catch (err) {
-    console.log(err.message)
+    console.error(err.message)
   }
 }
 
