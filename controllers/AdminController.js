@@ -69,3 +69,13 @@ exports.deleteUser = async (req, res) => {
     return res.status(500).send('Server Error')
   }
 }
+
+exports.getAll = async (req, res) => {
+  try {
+    const users = await User.find()
+    return res.status(200).json(users)
+  } catch (err) {
+    console.error(err.message)
+    return res.status(500).send('Server Error')
+  }
+}

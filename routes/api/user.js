@@ -19,6 +19,8 @@ router.post(
 // READ Current User
 router.get('/', [isAuth], UserController.index)
 
+router.get('/getAll', [isAuth], AdminController.getAll)
+
 // // READ User with ID
 router.get('/:id', [isAuth, isAdmin], AdminController.showUser)
 
