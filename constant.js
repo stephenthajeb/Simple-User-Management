@@ -1,5 +1,5 @@
-const accessTokenExpiration = '12h'
-const refreshTokenExpiration = '24h'
+const accessTokenExpiration = '72h'
+const refreshTokenExpiration = '144h'
 
 module.exports = Object.freeze({
   refreshTokenExpiration: refreshTokenExpiration,
