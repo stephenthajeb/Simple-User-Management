@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["npm","server"]
+CMD ["npm","run","server"]
