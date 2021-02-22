@@ -1,0 +1,1333 @@
+{
+	"info": {
+		"_postman_id": "94cb1a49-5d8e-4464-b8cc-10de080a3a8d",
+		"name": "UserManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Stephen Thajeb\",\r\n    \"username\":\"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"isAdmin\": false \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				},
+				"description": "Verb: Post\r\n\r\nAccess: Public\r\n\r\nDescription: Register a new user\r\n\r\nResponse: if success return refreshTokens and accessTokens else return error message"
+			},
+			"response": [
+				{
+					"name": "Register Fail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stephen Thajeb\",\r\n    \"username\":\"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"isAdmin\": false \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-VBiGuTvIunFL9XlHdXrotU2H1qA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:10:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"msg\": \"User already exists\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Register Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stephen Thajeb\",\r\n    \"username\":\"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"isAdmin\": false \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "562"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"232-IulksUTrYMCj02rLluBojEHMp+8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:10:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNlNTg0MTJkOTJhMDAyMWRiMzUzOSIsInVzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZX0sImlhdCI6MTYxNDAxMzgyOCwiZXhwIjoxNjE0MjczMDI4fQ.9JLCVsGLJZhnd9UQvh13wD3KDcZKEO5zQb9GTtD9SJs\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNlNTg0MTJkOTJhMDAyMWRiMzUzOSIsInVzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZX0sImlhdCI6MTYxNDAxMzgyOCwiZXhwIjoxNjE0NTMyMjI4fQ.E5Zos9Q9N0PIUOeCbCVj6bXtTP-jAeizL7nYi_lz1mU\"\n}"
+				},
+				{
+					"name": "Register Fail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stephen Thajeb\",\r\n    \"username\":\"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"isAdmin\": true \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-VBiGuTvIunFL9XlHdXrotU2H1qA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 16:47:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"msg\": \"User already exists\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Register Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stephen Thajeb\",\r\n    \"username\":\"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"isAdmin\": true \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "558"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22e-Wrhzx6IGJtYEjreofuylZfqwUd0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 16:41:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkZTllMGNlMWU1MDAyMTExMzRiNCIsInVzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDEyMDYyLCJleHAiOjE2MTQyNzEyNjJ9.WC4zvatbt8ghRFBlA39BcCUQYWXzJRwZH7Wg18sVUA0\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkZTllMGNlMWU1MDAyMTExMzRiNCIsInVzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDEyMDYyLCJleHAiOjE2MTQ1MzA0NjJ9.RQwHDOOKZTKxglbWgzxTaNn5qVWyZoXC36jXUKYfjBg\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Verb: Post\r\n\r\nAccess: Public\r\n\r\nDescription: Login a user\r\n\r\nResponse: if success return refreshTokens and accessTokens else return error message"
+			},
+			"response": [
+				{
+					"name": "Login Fail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin000\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-QZ/MnGA8xZnThewoSWMmUpN0P9E\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 16:48:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"msg\": \"Invalid credentials\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"234-tlMf4HgNYqlrDDLcYXFR6hdvMo8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 16:46:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI0MDQsImV4cCI6MTYxNDI3MTYwNH0.L_LoJGALejRs1UmlEaMePheeqRRjl1Po6b8Cv8RBu0U\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI0MDQsImV4cCI6MTYxNDUzMDgwNH0.omzSyiv9Fo20MaDMYBYKW-lLSg-V94GU9kUAJgn4idQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Read current user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTMxNzUsImV4cCI6MTYxNDI3MjM3NX0.l4XztKFFDvbv_JUlV0ItVBR3dwngfzFk-cOxizeoM0I",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/user?x-auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI5NjIsImV4cCI6MTYxNDI3MjE2Mn0.dVkoUUDaiOBNNtu0XSKy249M-evwgeLbcBji6VAVaE0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "x-auth-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI5NjIsImV4cCI6MTYxNDI3MjE2Mn0.dVkoUUDaiOBNNtu0XSKy249M-evwgeLbcBji6VAVaE0"
+						}
+					]
+				},
+				"description": "Verb: Get\r\n\r\nAccess: User\r\n\r\nDescription: Get current user data\r\n\r\nResponse: if success return current user data else return error message"
+			},
+			"response": [
+				{
+					"name": "Read current user Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTMxNzUsImV4cCI6MTYxNDI3MjM3NX0.l4XztKFFDvbv_JUlV0ItVBR3dwngfzFk-cOxizeoM0I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user?x-auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI5NjIsImV4cCI6MTYxNDI3MjE2Mn0.dVkoUUDaiOBNNtu0XSKy249M-evwgeLbcBji6VAVaE0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "x-auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI5NjIsImV4cCI6MTYxNDI3MjE2Mn0.dVkoUUDaiOBNNtu0XSKy249M-evwgeLbcBji6VAVaE0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-aOU28BC+ZvnTl2VWLIwdoFeTxww\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 16:59:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Stephen Thajeb\",\n    \"username\": \"admin\",\n    \"email\": \"admin@gmail.com\",\n    \"isAdmin\": true\n}"
+				},
+				{
+					"name": "Read current user Fail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzFmYjgwNTE3MTJkMjQ3YzlkY2M0YSIsInVzZXJuYW1lIjoidXNlcjIiLCJlbWFpbCI6InVzZXIyQGdtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlfSwiaWF0IjoxNjEzODg4Mzg0LCJleHAiOjE2MTM5MzE1ODR9.VD5l2JOPRyRzfSCx-TJRX21VOBS0_xb1qphK7iBrxwg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user?x-auth-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI0MDQsImV4cCI6MTYxNDI3MTYwNH0.L_LoJGALejRs1UmlEaMePheeqRRjl1Po6b8Cv8RBu0U",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "x-auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI0MDQsImV4cCI6MTYxNDI3MTYwNH0.L_LoJGALejRs1UmlEaMePheeqRRjl1Po6b8Cv8RBu0U"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-DJDC9r9ZIjjxtG1NDFTD9N196IA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 16:55:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"msg\": \"Session timed out,please login again\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Soft Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTMyNDYsImV4cCI6MTYxNDUzMTY0Nn0.kypJApdYoX4lKGj_USyhLDqcbyf1CAy_UVUVu8JpGi8\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/refresh_token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"refresh_token"
+					]
+				},
+				"description": "Verb: Post\r\n\r\nAccess: User\r\n\r\nDescription: Send a refresh token to renew  access token\r\n\r\nResponse: if success return new accessToken else return error message"
+			},
+			"response": [
+				{
+					"name": "Soft Refresh Token Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTMyNDYsImV4cCI6MTYxNDUzMTY0Nn0.kypJApdYoX4lKGj_USyhLDqcbyf1CAy_UVUVu8JpGi8\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/refresh_token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"refresh_token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "282"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11a-5rIqPQAnFrO1vZNgHi2yz/668SE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:02:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTMzMzQsImV4cCI6MTYxNDI3MjUzNH0.iMoI_pjT3HlVCYmwjMrcVbJDhAfX2FAYFXXYAHY5SDs\"\n}"
+				},
+				{
+					"name": "Soft Refresh Token Fail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTMyNDYsImV4cCI6MTYxNDI3MjQ0Nn0.lx4wjZAD_1VY52UtTnU0WGDJASjDBlxLT84tFxq7uo8\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/refresh_token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"refresh_token"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-v8XLJA8v+2NqMPbK10a8mj9luN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:01:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"msg\": \"Invalid token,please login again!\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Read User with Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI0MDQsImV4cCI6MTYxNDI3MTYwNH0.L_LoJGALejRs1UmlEaMePheeqRRjl1Po6b8Cv8RBu0U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/user/6033e58412d92a0021db3539",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"6033e58412d92a0021db3539"
+					]
+				},
+				"description": "Verb: GET\r\n\r\nAccess: Admin\r\n\r\nDescription: Admin get user's data with _id as params\r\n\r\nResponse: if success return refreshTokens and accessTokens else return error message"
+			},
+			"response": [
+				{
+					"name": "Admin Read User with Id Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMTI0MDQsImV4cCI6MTYxNDI3MTYwNH0.L_LoJGALejRs1UmlEaMePheeqRRjl1Po6b8Cv8RBu0U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/6033e58412d92a0021db3539",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"6033e58412d92a0021db3539"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "159"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9f-mh5MvGzCVn9/zdOYSROdYlo6Lpk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:15:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"isAdmin\": false,\n    \"_id\": \"6033e58412d92a0021db3539\",\n    \"name\": \"Stephen Thajeb\",\n    \"username\": \"user\",\n    \"email\": \"user@gmail.com\",\n    \"date\": \"2021-02-22T17:10:28.084Z\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "Admin Read User with Id Fail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/6033e58412d92a0021db3539",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"6033e58412d92a0021db3539"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-sPFN2i4Kl9f5BBurAtc0YXDeqKs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:15:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"msg\": \"No token, authorization denied\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Update User with Id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzM0M2FhZDMzYzk3MDAyMGM1YTdlYiIsInVzZXJuYW1lIjoidXNlcjMiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDExMjM1LCJleHAiOjE2MTQyNzA0MzV9.hJDGpV_bgi89nteO72Ef-Kl2-9T4Cs7lPSMZ_isEw7c",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Stephen Thajeb\",\r\n    \"username\": \"user3\",\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"admin123\",\r\n    \"isAdmin\": false \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/603343aad33c970020c5a7eb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"603343aad33c970020c5a7eb"
+					]
+				},
+				"description": "Verb: PUT\r\n\r\nAccess: Admin\r\n\r\nDescription: Admin update user data\r\n\r\nResponse: if success return updated user's data else return error message"
+			},
+			"response": [
+				{
+					"name": "Admin Update User with Id Fail",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzM0M2FhZDMzYzk3MDAyMGM1YTdlYiIsInVzZXJuYW1lIjoidXNlcjMiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDExMjM1LCJleHAiOjE2MTQyNzA0MzV9.hJDGpV_bgi89nteO72Ef-Kl2-9T4Cs7lPSMZ_isEw7c",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stephen Thajeb junior\",\r\n    \"username\": \"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user\",\r\n    \"isAdmin\": false \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/6033e58412d92a0021db3539",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"6033e58412d92a0021db3539"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "124"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7c-YRQYDxlg9CR5WglFl9X3SuozZu0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:18:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"value\": \"user\",\n            \"msg\": \"Please enter a password with 6 or more characters\",\n            \"param\": \"password\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Admin Update User with Id Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzM0M2FhZDMzYzk3MDAyMGM1YTdlYiIsInVzZXJuYW1lIjoidXNlcjMiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDExMjM1LCJleHAiOjE2MTQyNzA0MzV9.hJDGpV_bgi89nteO72Ef-Kl2-9T4Cs7lPSMZ_isEw7c",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stephen Thajeb junior\",\r\n    \"username\": \"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"isAdmin\": false \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/6033e58412d92a0021db3539",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"6033e58412d92a0021db3539"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bb-7D3ifStuw89h0hcHQXQq0z3wUgo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:19:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"isAdmin\": false,\n    \"_id\": \"6033e58412d92a0021db3539\",\n    \"name\": \"Stephen Thajeb junior\",\n    \"username\": \"user\",\n    \"email\": \"user@gmail.com\",\n    \"password\": \"user123\",\n    \"date\": \"2021-02-22T17:10:28.084Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Delete User with Id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzM0M2FhZDMzYzk3MDAyMGM1YTdlYiIsInVzZXJuYW1lIjoidXNlcjMiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDEwODUyLCJleHAiOjE2MTQyNzAwNTJ9.4Q0wPvyyzsUyzkh7mb1v_xFqqkTHyIPnffn9guYar1Y",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/user/6033de9e0ce1e500211134b4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"6033de9e0ce1e500211134b4"
+					]
+				},
+				"description": "Verb: Delete\r\n\r\nAccess: Admin\r\n\r\nDescription: Delete user with id\r\n\r\nResponse: if success return the deleted user else return error message"
+			},
+			"response": [
+				{
+					"name": "Admin Delete User with Id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzM0M2FhZDMzYzk3MDAyMGM1YTdlYiIsInVzZXJuYW1lIjoidXNlcjMiLCJlbWFpbCI6ImFkbWluMUBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjE0MDEwODUyLCJleHAiOjE2MTQyNzAwNTJ9.4Q0wPvyyzsUyzkh7mb1v_xFqqkTHyIPnffn9guYar1Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/6033de9e0ce1e500211134b4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"6033de9e0ce1e500211134b4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e8-+Z5vjAi9iCIo9GiH9BudGD+u+SI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:10:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"isAdmin\": true,\n    \"_id\": \"6033de9e0ce1e500211134b4\",\n    \"name\": \"Stephen Thajeb\",\n    \"username\": \"user\",\n    \"email\": \"user@gmail.com\",\n    \"password\": \"$2a$10$MqDUOObQKqH4vBOA1yrlF.agraSqcQXNxHgH12ZM2pRQyA4uLV5o2\",\n    \"date\": \"2021-02-22T16:41:02.438Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Admin Read All Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMDkyMjQsImV4cCI6MTYxNDI2ODQyNH0.4jtulmmq5WVW7KSf1HrlmBwJamHiz5A6jWBWlOc4O2Q",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/user/getAll?x-auth-token=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"getAll"
+					],
+					"query": [
+						{
+							"key": "x-auth-token",
+							"value": ""
+						}
+					]
+				},
+				"description": "Verb: Get\r\n\r\nAccess: Admin\r\n\r\nDescription: Get all users data\r\n\r\nResponse: if success return list of users else return error message"
+			},
+			"response": [
+				{
+					"name": "Admin Read All Users Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwMzNkMzg4ZWYxZGUwMDAyMDZjYjkwMSIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWV9LCJpYXQiOjE2MTQwMDkyMjQsImV4cCI6MTYxNDI2ODQyNH0.4jtulmmq5WVW7KSf1HrlmBwJamHiz5A6jWBWlOc4O2Q"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/user/getAll?x-auth-token=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "x-auth-token",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "321"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"141-4n4O2B2/qNWp3G4t06eNzpaRwaE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Feb 2021 17:06:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"isAdmin\": true,\n        \"_id\": \"6033d388ef1de000206cb901\",\n        \"name\": \"Stephen Thajeb\",\n        \"username\": \"admin\",\n        \"email\": \"admin@gmail.com\",\n        \"date\": \"2021-02-22T15:53:44.133Z\",\n        \"__v\": 0\n    },\n    {\n        \"isAdmin\": true,\n        \"_id\": \"6033de9e0ce1e500211134b4\",\n        \"name\": \"Stephen Thajeb\",\n        \"username\": \"user\",\n        \"email\": \"user@gmail.com\",\n        \"date\": \"2021-02-22T16:41:02.438Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	]
+}
